@@ -49,7 +49,29 @@ document.getElementById("challenge-2").innerHTML = "<br>" + "Challenge Two: " + 
 // --------------------------------------------------------
 // --- Challenge 3 ----------------------------------------
 // --------------------------------------------------------
+var challengeThreeInputA = [ 1, 1, 1, 2, 1, 1 ];  // 2
+var challengeThreeInputB = [ 0, 0, 0, 0, 0, 0, 0, 0.55, 0, 0 ];  // 0.55
+var challenge3Max = Math.max.apply(Math, challengeThreeInputA);
+var challenge3Min = Math.min.apply(Math, challengeThreeInputA);
+var minCount = 0;
+var maxCount = 0;
+var finalAnswer = "";
 
+for (var ijk = 0; ijk < challengeThreeInputA.length; ijk++) {
+  if (challengeThreeInputA[ijk] === challenge3Min) {
+    minCount++;
+    if (minCount > 1) {
+      finalAnswer = challenge3Max;
+    }
+  } else if (challengeThreeInputA[ijk] === challenge3Max) {
+    maxCount++;
+    if (maxCount > 1) {
+      finalAnswer = challenge3Min;
+    }
+  }
+}
+
+document.getElementById("challenge-3").innerHTML = "<br>" + "Challenge Three: " + "<br>" + finalAnswer + "<br>";
 // --------------------------------------------------------
 // --- Challenge 4 ----------------------------------------
 // --------------------------------------------------------
