@@ -7,7 +7,22 @@ console.log("Hello");
 // --------------------------------------------------------
 // --- Challenge 2 ----------------------------------------
 // --------------------------------------------------------
-
+var challengeTwoInputA = [1,2,3,4,5,6,7,8,9,33,77];  //[1,2,7,4,5,6,3,8,9,77,33];
+var challengeTwoInputB = [12,13,14];  //[12,17,14];
+var challengeTwoInputC = [9,2,4,7,3];  //[9,2,4,3,7];
+var testArray = challengeTwoInputA;
+// var testArray = challengeTwoInputB;
+// var testArray = challengeTwoInputC;
+var str = "";
+for (var iii = 0; iii < testArray.length; iii++) {
+  str = testArray[iii].toString();
+  if (str.includes("3")) {
+    testArray[iii] = 1 * (str.replace(/[3]/g,7));
+  } else if (str.includes("7")) {
+      testArray[iii] = 1 * (str.replace(/[7]/g,3));
+  }
+}
+document.getElementById("challenge-2").innerHTML = "<br>" + "Challenge Two: " + "<br>" + testArray + "<br>";
 // --------------------------------------------------------
 // --- Challenge 3 ----------------------------------------
 // --------------------------------------------------------
@@ -21,7 +36,6 @@ var challengeFourInputB = [ 3, 8, 1, 2, 4, 12 ];  // [ 6, 16, 2, 4, 8, 24 ]
 for (var i = 0; i < challengeFourInputA.length; i++) {
   challengeFourInputA[i] = challengeFourInputA[i] * 2;
 }
-console.log(challengeFourInputA);
 document.getElementById("challenge-4").innerHTML = "<br>" + "Challenge Four: " + "<br>" + challengeFourInputA + "<br>";
 // --------------------------------------------------------
 // --- Challenge 5 ----------------------------------------
