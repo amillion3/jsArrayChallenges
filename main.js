@@ -15,7 +15,14 @@ console.log("Hello");
 // --------------------------------------------------------
 // --- Challenge 4 ----------------------------------------
 // --------------------------------------------------------
+var challengeFourInputA = [ 1, 2, 3 ];  // [2, 4, 6]
+var challengeFourInputB = [ 3, 8, 1, 2, 4, 12 ];  // [ 6, 16, 2, 4, 8, 24 ]
 
+for (var i = 0; i < challengeFourInputA.length; i++) {
+  challengeFourInputA[i] = challengeFourInputA[i] * 2;
+}
+console.log(challengeFourInputA);
+document.getElementById("challenge-4").innerHTML = "<br>" + "Challenge Four: " + "<br>" + challengeFourInputA + "<br>";
 // --------------------------------------------------------
 // --- Challenge 5 ----------------------------------------
 // --------------------------------------------------------
