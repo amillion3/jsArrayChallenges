@@ -3,7 +3,30 @@ console.log("Hello");
 // --------------------------------------------------------
 // --- Challenge 1 ----------------------------------------
 // --------------------------------------------------------
-
+var challengeOneInput = "jumbo shrimp";  //541 659
+var splitInput = challengeOneInput.split(" ");  //splits to two array values
+var firstWordArray = splitInput[0].toString();  //splits each word to seperate indices
+var secondWordArray = splitInput[1].toString();  //splits each word to seperate indices
+var firstWordScore = 0;
+var secondWordScore = 0;
+//calculate UTF-16 code unit at a given index
+for (var i = 0; i < splitInput.length; i++) {
+  if (i === 0) {  //this if loop is needed in case word lengths are different
+    for (var j = 0; j < firstWordArray.length; j++) {
+      firstWordScore += firstWordArray.charCodeAt(j);
+    }
+  } else {
+    for (var k = 0; k < secondWordArray.length; k++) {
+      secondWordScore += secondWordArray.charCodeAt(k);
+    }
+  }
+}
+//check to see which word combo is higher
+if (firstWordScore >= secondWordScore) {
+  document.getElementById("challenge-1").innerHTML = "Challenge One: " + "<br>" + splitInput[0];
+} else {
+  document.getElementById("challenge-1").innerHTML = "Challenge One: " + "<br>" + splitInput[1];
+}
 // --------------------------------------------------------
 // --- Challenge 2 ----------------------------------------
 // --------------------------------------------------------
