@@ -85,7 +85,20 @@ document.getElementById("challenge-4").innerHTML = "<br>" + "Challenge Four: " +
 // --------------------------------------------------------
 // --- Challenge 5 ----------------------------------------
 // --------------------------------------------------------
+// var array1 = [1,2];
+// var array2 = [1];  //display = [2]
+var array1 = [1,2, 4, 7, 5, 9];
+var array2 = [5, 9, 2];  //display = [1, 4, 7]
 
+for (var jjj = 0; jjj < array1.length; jjj++) {
+  for (var l = 0; l < array2.length; l++) {
+    console.log(array1[jjj],array2[l]);
+    if (array1[jjj] === array2[l]) {
+      array1.splice(jjj, 1);
+    }
+  }
+}
+document.getElementById("challenge-5").innerHTML = "<br>" + "Challenge Five: " + "<br>" + array1 + "<br>";
 // --------------------------------------------------------
 // --- Challenge 6 ----------------------------------------
 // --------------------------------------------------------
