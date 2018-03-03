@@ -92,7 +92,6 @@ var array2 = [5, 9, 2];  //display = [1, 4, 7]
 
 for (var jjj = 0; jjj < array1.length; jjj++) {
   for (var l = 0; l < array2.length; l++) {
-    console.log(array1[jjj],array2[l]);
     if (array1[jjj] === array2[l]) {
       array1.splice(jjj, 1);
     }
@@ -127,7 +126,33 @@ document.getElementById("challenge-6").innerHTML = "<br>" + "Challenge Six: " + 
 // --------------------------------------------------------
 // --- Challenge 8 ----------------------------------------
 // --------------------------------------------------------
+var test1 = 274; // Display = '2-7-4'
+var test2 = 6815; // Display = '68-1-5'
+//this may be the ugliest code i have ever written
+//cringe
+//and now i realize this won't work if it starts with an odd number
+//whyyy
+var arr = test2.toString().split("");
 
+for (var klm = 0; klm < arr.length; klm++) {
+  if (arr[klm] === "1" || arr[klm] === "3" || arr[klm] === "5" || arr[klm] === "7" || arr[klm] === "9") {
+    var tempArrayOriginalValue = arr[klm];  //janky code requires me to store the original number here
+    arr[klm] = "-" + arr[klm] + "-"; //odd number, so add a dash to left and right
+
+    if (klm === arr.length - 1) {  //if its the last value, remove dash from the right side
+      arr[klm] = "-" + tempArrayOriginalValue;  //dash on the left only
+    }
+
+    if (arr[klm - 1].endsWith("-")) {  //checks to see if previous index has a dash at the end
+      arr[klm] = tempArrayOriginalValue + "-";
+      if (klm === arr.length - 1) {  // if its the last value and the previous value has a dash
+        arr[klm] = tempArrayOriginalValue; //no dashes
+      }
+    }
+  }
+}
+arr = arr.join("");
+document.getElementById("challenge-8").innerHTML = "<br>" + "Challenge Eight: " + "<br>" + arr + "<br>";
 // --------------------------------------------------------
 // --- Challenge 9 ----------------------------------------
 // --------------------------------------------------------
