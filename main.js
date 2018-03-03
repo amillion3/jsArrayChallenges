@@ -102,7 +102,24 @@ document.getElementById("challenge-5").innerHTML = "<br>" + "Challenge Five: " +
 // --------------------------------------------------------
 // --- Challenge 6 ----------------------------------------
 // --------------------------------------------------------
-
+var test1 = [1,3]; // 2
+var test2 = [2,3,4]; // 1
+var test3 = [13,11,10,3,2,1,4,5,6,9,7,8]; // 12
+var inputArray = test3.sort(compareNumbers);
+var answer = 0;
+function compareNumbers(a, b) {  //function to properly sort array
+  return a - b;
+}
+for (var ll = 0; ll < inputArray.length; ll++) {
+  if ( (inputArray[ll] + 1) === ( inputArray[ll + 1]) ) {
+      // do nothing
+  }
+  else {
+    answer = inputArray[ll] + 1;
+    break;
+  }
+}
+document.getElementById("challenge-6").innerHTML = "<br>" + "Challenge Six: " + "<br>" + answer + "<br>";
 // --------------------------------------------------------
 // --- Challenge 7 ----------------------------------------
 // --------------------------------------------------------
